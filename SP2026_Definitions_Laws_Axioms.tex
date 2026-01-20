@@ -31,7 +31,59 @@ This document contains the official list of definitions, laws, and axioms that s
 %     \item \textbf{Definition of Even}: If a number $x$ is even, it can be expressed as $x=2k, k\in \mathbb{Z}$
 % \end{enumerate}
 
+\begin{enumerate}
+    \item \textbf{Negation ($\lnot$): } the negation of $p$ is the statement “not $p$.”
+    \item \textbf{Conjunction ($\land$):} the conjunction of $p$ and $q$ is the statement “$p$ and $q$.” For the statement to be true, both $p$ and $q$ must be true.
+    \item \textbf{Disjunction ($\lor$):} the disjunction of $p$ and $q$ is the statement “$p$ or $q$.” For the statement to be true, at least one of $p$ or $q$ must be true.
+    \item \textbf{Exclusive-or ($\oplus$):} the exclusive-or of $p$ and $q$ is the statement “$p$ XOR $q$.” For the statement to be true, exactly one of $p$ and $q$ must be true.
+    \item \textbf{Conditional statement ($\rightarrow$):} “If $p$, then $q$.” Written $p \rightarrow q$. This is false when $p$ is true and $q$ is false, and true in every other instance. 
+    \item \textbf{Converse:} $q \rightarrow p$.
+    \item \textbf{Inverse:} $\lnot p \rightarrow \lnot q$.
+    \item \textbf{Contrapositive:} $\lnot q \rightarrow \lnot p$ (logically equivalent to the given conditional).
+    \item \textbf{Bi-conditional statement ($\leftrightarrow$):} “$p$ if and only if $q$.” One cannot exist without the other. Statement is true when both statements are true or both statements are false. $q$ is sufficient for $p$ and $p$ is sufficient for $q$. 
+    \item \textbf{Definition of Biconditional:} $$p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$$
+    \item \textbf{Tautology:} a compound proposition that is always true. Examples: $p \rightarrow p, p \lor \lnot p$.
+    \item \textbf{Contradiction:} a compound proposition that is always false. Example: $\lnot p \land p$.
+    \item \textbf{Contingency:} a compound proposition that is neither a tautology nor a contradiction. Most statements are contingencies. Example: $p \land q$.
+    \item \textbf{Logical Equivalence:} Two compound propositions $p$ and $q$ are logically equivalent if $p \leftrightarrow q$ is a tautology. Notation: $p \equiv q$.
+\end{enumerate}
+    
+
+
+
 \section{Laws \& Axioms}
+
+\begin{itemize}
+    \item \textbf{De Morgan's Laws: } 
+        \begin{enumerate}
+            \item $\lnot(p \land q) \equiv \lnot p \lor \lnot q$
+            \item $\lnot(p \lor q) \equiv \lnot p \land \lnot q$
+        \end{enumerate}
+    \item \textbf{Conditional Disjunction Equivalence (CDE):} $p \rightarrow q \equiv \lnot p \lor q$.
+\end{itemize}
+
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.3} % increase row height
+\centering
+\caption{\textbf{Only equivalences and rules of inference present on this table will be accepted.}}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+    \textbf{\textit{Equivalence}} & \textbf{\textit{Name}}\\ 
+    \hline
+    \twolineequivalence{p \rightarrow q \equiv \neg p \lor q}{} & Conditional Disjunction Equivalence \\
+    \twolineequivalence{p \rightarrow q \equiv \neg q \rightarrow \neg p}{} & Contrapositive Law \\
+    \twolineequivalence{p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)}{} & Definition of Biconditional \\
+    \twolineequivalence{\lnot (\lnot p) \equiv p}{} & Double Negation Law \\
+    \twolineequivalence{p \land \textbf{T} \equiv p}{p \lor \textbf{F} \equiv p} & Identity Laws \\
+    \twolineequivalence{p \lor \textbf{T} \equiv \textbf{T}}{p \land \textbf{F} \equiv \textbf{F}} & Domination Laws \\
+    \twolineequivalence{p \lor p \equiv p}{p \land p \equiv p} & Idempotent Laws \\
+    \twolineequivalence{p \lor q \equiv q \lor p}{p \land q \equiv q \land p} & Commutative Laws \\
+    \twolineequivalence{(p \lor q) \lor r \equiv p \lor (q \lor r)}{(p \land q) \land r \equiv p \land (q \land r)} & Associative Laws \\
+    \twolineequivalence{p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)}{p \land (q \lor r) \equiv (p \land q) \lor (p \land r)} & Distributive Laws \\
+    \twolineequivalence{\neg (p \land q) \equiv \neg p \lor \neg q}{\neg (p \lor q) \equiv \neg p \land \neg q} & De Morgan's Laws \\
+    \twolineequivalence{p \lor (p \land q) \equiv p}{p \land (p \lor q) \equiv p} & Absorption Laws \\
+    \twolineequivalence{p \lor \lnot p \equiv \textbf{T}}{p \land \lnot p \equiv \textbf{F}} & Negation Laws \\
+\end{tabularx}
+\end{table}
 
 
 
