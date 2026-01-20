@@ -1,0 +1,29 @@
+name: Build LaTeX Document
+
+on:
+  push:
+    paths:
+      - 'main.tex'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up LaTeX environment
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+
+      - name: Commit and push PDF
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Build Updated Reference Document"
+          file_pattern: SP2026_Definitions_Laws_Axioms.pdf
+          push_options: '--force'
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
