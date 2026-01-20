@@ -3,7 +3,7 @@ name: Build LaTeX Document
 on:
   push:
     paths:
-      - 'main.tex'
+      - 'SP2026_Definitions_Laws_Axioms.tex'
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       - name: Set up LaTeX environment
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex
+          root_file: SP2026_Definitions_Laws_Axioms.tex
 
       - name: Commit and push PDF
         uses: stefanzweifel/git-auto-commit-action@v5
