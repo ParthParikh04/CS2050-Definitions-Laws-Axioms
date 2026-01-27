@@ -86,7 +86,7 @@ This document contains the official list of definitions, laws, and axioms that s
 \begin{table}[H]
 \renewcommand{\arraystretch}{1.3} % increase row height
 \centering
-\caption{\textbf{Only equivalences and rules of inference present on this table will be accepted.}}
+\caption{\textbf{Only equivalences present on this table will be accepted.}}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
     \textbf{\textit{Equivalence}} & \textbf{\textit{Name}}\\ 
     \hline
@@ -114,7 +114,87 @@ This document contains the official list of definitions, laws, and axioms that s
         \end{enumerate}
 \end{itemize}
 
+\begin{table}[H]
+\renewcommand{\arraystretch}{1.3}
+\centering
+\caption{\textbf{Only equivalences and rules of inference present on this table will be accepted.}}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{\textit{Rule of Inference}} & \textbf{\textit{Name}}\\
+\hline
 
+$p$\\
+$p \rightarrow q$\\
+\rule{2cm}{0.4pt}\\
+$\therefore q$
+&
+Modus Ponens
+\\
+\hline
+
+$\neg q$\\
+$p \rightarrow q$\\
+\rule{2cm}{0.4pt}\\
+$\therefore \neg p$
+&
+Modus Tollens
+\\
+\hline
+
+$p$\\
+\rule{2cm}{0.4pt}\\
+$\therefore p \lor q$
+&
+Addition
+\\
+\hline
+
+$p \land q$\\
+\rule{2cm}{0.4pt}\\
+$\therefore p$
+&
+Simplification
+\\
+\hline
+
+$p$\\
+$q$\\
+\rule{2cm}{0.4pt}\\
+$\therefore p \land q$
+&
+Conjunction
+\\
+\hline
+
+$p \rightarrow q$\\
+$q \rightarrow r$\\
+\rule{2cm}{0.4pt}\\
+$\therefore p \rightarrow r$
+&
+Hypothetical Syllogism
+\\
+\hline
+
+$p \lor q$\\
+$\neg p$\\
+\rule{2cm}{0.4pt}\\
+$\therefore q$
+&
+Disjunctive Syllogism
+\\
+\hline
+
+$p \lor q$\\
+$\neg p \lor r$\\
+\rule{2cm}{0.4pt}\\
+$\therefore q \lor r$
+&
+Resolution
+\\
+\hline
+
+\end{tabularx}
+\end{table}
 
 
 \end{document}
