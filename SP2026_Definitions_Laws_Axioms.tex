@@ -61,6 +61,9 @@ This document contains the official list of definitions, laws, and axioms that s
             \item \( \mathbb{Z}^+ \): Positive integers \(\{1, 2, 3, \dots\}\)
             \item \( \mathbb{Z}^- \): Negative integers \(\{-1, -2, -3, \dots\}\)
         \end{itemize}
+
+    \item \textbf{Nested Quantifier: } When one quantifier is within the scope of another. Ex: $\forall x \exists y(x-2y=5)$
+    \item \textbf{Argument: } Is a collection of premises and a conclusion. An argument is valid if and only if the truth of the premises guarantees the conclusion. Or, in the language of the class (where $t$ is the conclusion and $p_1, p_2, \cdots, p_k$ are premises): $$(p_1 \land p_2 \land \dots p_n) \to t$$
     
     
 \end{enumerate}
@@ -77,6 +80,7 @@ This document contains the official list of definitions, laws, and axioms that s
             \item $\lnot(p \lor q) \equiv \lnot p \land \lnot q$
         \end{enumerate}
     \item \textbf{Conditional Disjunction Equivalence (CDE):} $p \rightarrow q \equiv \lnot p \lor q$.
+    
 \end{itemize}
 
 \begin{table}[H]
@@ -101,6 +105,14 @@ This document contains the official list of definitions, laws, and axioms that s
     \twolineequivalence{p \lor \lnot p \equiv \textbf{T}}{p \land \lnot p \equiv \textbf{F}} & Negation Laws \\
 \end{tabularx}
 \end{table}
+
+\begin{itemize}
+    \item \textbf{De Morgan's Laws for Quantifiers:}
+        \begin{enumerate}
+            \item $\lnot (\forall x\, P(x)) \equiv \exists x\, \lnot P(x)$
+            \item $\lnot (\exists x\, P(x)) \equiv \forall x\, \lnot P(x)$
+        \end{enumerate}
+\end{itemize}
 
 
 
