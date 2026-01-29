@@ -4,14 +4,24 @@
 \usepackage{geometry}
 \geometry{margin=1in}
 \usepackage{float}
-\usepackage{graphicx} % Required for inserting images
+\usepackage{graphicx}
 
-\title{Definitions, Laws, and Axioms}
-\author{Tanisha Gupta, Aidan Nguyen, Jennifer Jiang, Parth Parikh}
-\date{Spring 2026}
+% --- Custom Command Definitions ---
+\newcommand{\ruleofinference}[3]{
+\begin{tabular}{rl}
+     & \rule{0pt}{2em}$#1$ \\
+     & $#2$ \\\cline{2-2}
+     $\therefore$ & $#3$
+\end{tabular}
+}
 
+\newcommand{\onelinerrule}[2]{
+\begin{tabular}{rl}
+     & \rule{0pt}{2em}$#1$ \\\cline{2-2}
+     $\therefore$ & $#2$
+\end{tabular}
+}
 
-% Define helper command for two-line equivalences
 \newcommand{\twolineequivalence}[2]{
 \begin{tabular}{l}
      \rule{0pt}{2em}$#1$ \\
@@ -19,11 +29,48 @@
 \end{tabular}
 }
 
+\newcommand{\onelineequivalence}[1]{
+\begin{tabular}{l}
+     \rule{0pt}{2em}$#1$
+\end{tabular}
+}
+% ----------------------------------
+
+\title{Definitions, Laws, and Axioms}
+\author{Tanisha Gupta, Aidan Nguyen, Jennifer Jiang, Parth Parikh}
+\date{Spring 2026}
+
+
 \begin{document}
 \maketitle
 
 \noindent
 This document contains the official list of definitions, laws, and axioms that students are permitted to reference and use for CS 2050 assignments and examinations.
+
+
+\section{Proof Tips}
+
+This section outlines some common mistakes and key issues we find in proofs. While not an exhaustive list, the items listed below will result in \textbf{definite point deductions} on homeworks, exams, and any other assignments for this course. We recommend you pay careful attention to this list as we will continue to update it frequently. 
+
+\begin{itemize}
+    \item \textbf{Proper Use of Closure:} When invoking the Axiom of Closure, you must specify both the operation (addition or multiplication) and the specific domain. Closure is officially accepted for multiplication and addition under the domains of $\mathbb{Z}$ and $\mathbb{R}$. \textbf{\textit{Note:}} Integers are NOT closed over division!
+    
+    \item \textbf{Avoid Assuming the Conclusion:} A proof must demonstrate that the conclusion follows from the premises. An argument is only valid if the truth of the premises guarantees the conclusion. Starting a proof by assuming the conclusion is true is a logical error; the final proof must move from premises to conclusion.
+    
+    \item \textbf{Parity Definitions:} Always use the formal definitions for even and odd integers. An integer $x$ is even if it can be represented as $x = 2a, a \in \mathbb{Z}$. An integer $x$ is odd if it can be represented as $x = 2a + 1, a \in \mathbb{Z}$. 
+    
+    \item \textbf{Scratch Work vs. Formal Proof:} While scratch work often involves working backwards from the conclusion to the premises or using a two-column format, the final proof should be presented as a clear, forward-moving logical progression in \textbf{paragraph format}.
+    
+    \item \textbf{Citing Domains for New Variables:} Whenever a new variable is introduced, you must explicitly cite its domain. This is critical because predicates, quantifiers, and general givens are typically only defined within a specified domain. 
+    
+    \item \textbf{Variable Domains in Sets:} Ensure you are using the correct notation for number sets when defining variables, particularly for the following:
+    \begin{itemize}
+        \item \( \mathbb{N} \): Natural numbers \(\{0, 1, 2, 3, \dots\}\)
+        \item \( \mathbb{Z} \): Integers \(\{\dots, -2, -1, 0, 1, 2, \dots\}\)
+        \item \( \mathbb{Q} \): Rational numbers \(\left\{ \frac{a}{b} \mid a, b \in \mathbb{Z}, b \neq 0 \right\}\)
+        \item \( \mathbb{R} \): Real numbers
+    \end{itemize}
+\end{itemize}
 
 \section{Definitions}
 
@@ -107,123 +154,17 @@ This document contains the official list of definitions, laws, and axioms that s
     
 \end{itemize}
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{1.3} % increase row height
-\centering
-\caption{\textbf{Only equivalences present on this table will be accepted.}}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
-    \textbf{\textit{Equivalence}} & \textbf{\textit{Name}}\\ 
-    \hline
-    \twolineequivalence{p \rightarrow q \equiv \neg p \lor q}{} & Conditional Disjunction Equivalence \\
-    \twolineequivalence{p \rightarrow q \equiv \neg q \rightarrow \neg p}{} & Contrapositive Law \\
-    \twolineequivalence{p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)}{} & Definition of Biconditional \\
-    \twolineequivalence{\lnot (\lnot p) \equiv p}{} & Double Negation Law \\
-    \twolineequivalence{p \land \textbf{T} \equiv p}{p \lor \textbf{F} \equiv p} & Identity Laws \\
-    \twolineequivalence{p \lor \textbf{T} \equiv \textbf{T}}{p \land \textbf{F} \equiv \textbf{F}} & Domination Laws \\
-    \twolineequivalence{p \lor p \equiv p}{p \land p \equiv p} & Idempotent Laws \\
-    \twolineequivalence{p \lor q \equiv q \lor p}{p \land q \equiv q \land p} & Commutative Laws \\
-    \twolineequivalence{(p \lor q) \lor r \equiv p \lor (q \lor r)}{(p \land q) \land r \equiv p \land (q \land r)} & Associative Laws \\
-    \twolineequivalence{p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)}{p \land (q \lor r) \equiv (p \land q) \lor (p \land r)} & Distributive Laws \\
-    \twolineequivalence{\neg (p \land q) \equiv \neg p \lor \neg q}{\neg (p \lor q) \equiv \neg p \land \neg q} & De Morgan's Laws \\
-    \twolineequivalence{p \lor (p \land q) \equiv p}{p \land (p \lor q) \equiv p} & Absorption Laws \\
-    \twolineequivalence{p \lor \lnot p \equiv \textbf{T}}{p \land \lnot p \equiv \textbf{F}} & Negation Laws \\
-\end{tabularx}
-\end{table}
-
-\begin{itemize}
-    \item \textbf{De Morgan's Laws for Quantifiers:}
-        \begin{enumerate}
-            \item $\lnot (\forall x\, P(x)) \equiv \exists x\, \lnot P(x)$
-            \item $\lnot (\exists x\, P(x)) \equiv \forall x\, \lnot P(x)$
-        \end{enumerate}
-\end{itemize}
-
-\begin{table}[H]
-\renewcommand{\arraystretch}{1.3}
-\centering
-\caption{\textbf{Only rules of inference present on this table will be accepted.}}
-\begin{tabularx}{\textwidth}{|X|X|}
-\hline
-\textbf{\textit{Rule of Inference}} & \textbf{\textit{Name}}\\
-\hline
-
-$p$\\
-$p \rightarrow q$\\
-\rule{2cm}{0.4pt}\\
-$\therefore q$
-&
-Modus Ponens
-\\
-\hline
-
-$\neg q$\\
-$p \rightarrow q$\\
-\rule{2cm}{0.4pt}\\
-$\therefore \neg p$
-&
-Modus Tollens
-\\
-\hline
-
-$p$\\
-\rule{2cm}{0.4pt}\\
-$\therefore p \lor q$
-&
-Addition
-\\
-\hline
-
-$p \land q$\\
-\rule{2cm}{0.4pt}\\
-$\therefore p$
-&
-Simplification
-\\
-\hline
-
-$p$\\
-$q$\\
-\rule{2cm}{0.4pt}\\
-$\therefore p \land q$
-&
-Conjunction
-\\
-\hline
-
-$p \rightarrow q$\\
-$q \rightarrow r$\\
-\rule{2cm}{0.4pt}\\
-$\therefore p \rightarrow r$
-&
-Hypothetical Syllogism
-\\
-\hline
-
-$p \lor q$\\
-$\neg p$\\
-\rule{2cm}{0.4pt}\\
-$\therefore q$
-&
-Disjunctive Syllogism
-\\
-\hline
-
-$p \lor q$\\
-$\neg p \lor r$\\
-\rule{2cm}{0.4pt}\\
-$\therefore q \lor r$
-&
-Resolution
-\\
-\hline
-
-\end{tabularx}
-\end{table}
 
 \textbf{Axioms:}
 \begin{itemize}
     \item Closure: Multiplication and Addition are closed under the domains of $\mathbb{Z}, \mathbb{Q}, \text{and}, \mathbb{R}.$
 \end{itemize}
 
+
+\newpage
+\input{Tables/Logical Equivalences}
+\newpage
+\input{Tables/Rules of Inference}
+\input{Tables/Quantified Rules of Inference and Equivalences}
 
 \end{document}

@@ -1,0 +1,37 @@
+% \newcommand{\twolineequivalence}[2]{
+% \begin{tabular}{l}
+%      \rule{0pt}{2em}$#1$ \\
+%      $#2$
+% \end{tabular}
+% }
+
+% \newcommand{\onelineequivalence}[1]{
+% \begin{tabular}{l}
+%      \rule{0pt}{2em}$#1$
+% \end{tabular}
+% }
+
+\begin{center}
+    \textbf{Only equivalences and rules of inferences present on these tables will be accepted}
+\end{center}
+
+\begin{center}
+\begin{tabular}{p{0.4\textwidth}p{0.4\textwidth}}
+    \textbf{\textit{Equivalence}} & \textbf{\textit{Name}}\\ 
+    \hline
+    \twolineequivalence{p \rightarrow q \equiv \neg p \lor q}{} & Conditional Disjunction Equivalence \\
+    \twolineequivalence{p \rightarrow q \equiv \neg q \rightarrow \neg p}{} & Contrapositive Law \\
+    \twolineequivalence{p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p )}{} & Definition of Biconditional \\
+    \twolineequivalence{\lnot (\lnot p) \equiv p}{} & Double Negation law \\
+    \twolineequivalence{p \land \textbf{T} \equiv p}{p \lor \textbf{F} \equiv p} & Identity Laws \\
+    \twolineequivalence{p \lor \textbf{T} \equiv \textbf{T}}{p \land \textbf{F} \equiv \textbf{F}} & Domination Laws \\
+    \twolineequivalence{p \lor p \equiv p}{p \land p \equiv p} & Idempotent Laws \\
+    \twolineequivalence{\lnot (\lnot p) \equiv p}{} & Double Negation law \\
+    \twolineequivalence{p \lor q \equiv q \lor p}{p \land q \equiv q \land p} & Commutative Laws \\
+    \twolineequivalence{(p \lor q) \lor r \equiv p \lor (q \lor r)}{(p \land q) \land r \equiv p \land (q \land r)} & Associative Laws \\
+    \twolineequivalence{p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)}{p \land (q \lor r) \equiv (p \land q) \lor (p \land r)} & Distributive Laws \\
+    \twolineequivalence{\neg (p \land q) \equiv \neg p \lor \neg q}{\neg (p \lor q) \equiv \neg p \land \neg q} & DeMorgan's Laws \\
+    \twolineequivalence{p \lor (p \land q) \equiv p}{p \land (p \lor q) \equiv p} & Absorption Laws \\
+    \twolineequivalence{p \lor \lnot p \equiv \textbf{T}}{p \land \lnot p \equiv \textbf{F}} & Negation Laws \\
+\end{tabular}
+\end{center}

@@ -1,0 +1,31 @@
+% \newcommand{\ruleofinference}[3]{
+% \begin{tabular}{rl}
+%      & \rule{0pt}{2em}$#1$ \\
+%      & $#2$ \\\cline{2-2}
+%      $\therefore$ & $#3$
+% \end{tabular}
+% }
+
+% \newcommand{\onelinerrule}[2]{
+% \begin{tabular}{rl}
+%      & \rule{0pt}{2em}$#1$ \\\cline{2-2}
+%      $\therefore$ & $#2$
+% \end{tabular}
+% }
+
+
+\textbf{Only equivalences and rules of inferences present on these tables will be accepted}
+
+\begin{center}
+\begin{tabular}{p{0.4\textwidth}p{0.4\textwidth}}
+    \textbf{\textit{Rule of Inference}} & \textbf{\textit{Name}}\\ \hline
+    \ruleofinference{p}{p \rightarrow q}{q} & Modus ponens \\
+    \ruleofinference{\lnot q}{p \rightarrow q}{\lnot p} & Modus tollens \\
+    \ruleofinference{p \rightarrow q}{q \rightarrow r}{p \rightarrow r} & Hypothetical syllogism \\
+    \ruleofinference{p \lor q}{\lnot p}{q} & Disjunctive syllogism \\
+    \onelinerrule{p}{p \lor q} & Addition \\
+    \onelinerrule{p \land q}{p} & Simplification \\
+    \ruleofinference{p}{q}{p \land q} & Conjunction \\
+    \ruleofinference{p \lor q}{\lnot p \lor r}{q \lor r} & Resolution
+\end{tabular}
+\end{center}
